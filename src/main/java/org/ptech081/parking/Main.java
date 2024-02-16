@@ -47,9 +47,13 @@ public class Main {
     LocalDate fechaFin2 = LocalDate.of(2025, Month.MARCH, 29);
     LocalTime horaFin2 = LocalTime.of(20, 30, 00);
 
+    //Crear Empleado
+    Empleado Empleado1 = new Empleado("Juan",1L);
+    Empleado Empleado2 = new Empleado("Alberto",100L);
+
     //crear registro
-    Registro registro1 = new Registro(fechaInicio, horaInicio, fechaFin,horaFin, 5000L,cupo1,cliente1.misCarros.get(1),cliente1);
-    Registro registro2 = new Registro(fechaInicio2, horaInicio2, fechaFin2,horaFin2, 6000L,cupo1,cliente2.misCarros.get(1),cliente2);
+    Registro registro1 = new Registro(fechaInicio, horaInicio, fechaFin,horaFin, 5000L,cupo1,cliente1.misCarros.get(1),cliente1,Empleado1 );
+    Registro registro2 = new Registro(fechaInicio2, horaInicio2, fechaFin2,horaFin2, 6000L,cupo1,cliente2.misCarros.get(1),cliente2,Empleado2);
     //Añadir el registro a la lista
     misRegistros.add(registro1);
     misRegistros.add(registro2);
@@ -57,7 +61,7 @@ public class Main {
     System.out.println("registros de entreda y salida para parking");
     
     for(Registro r:misRegistros){
-        System.out.println("Cliente: " +r.cliente.nombre + " " +r.cliente.Apellido + "|" + r.carro.placa + " " + r.carro.tipoVehiculo + "|" + r.valor+ "|" + r.fechaInicio +" "+ r.horaInicio + "|" );
+        System.out.println("Cliente: " +r.cliente.nombre + " " +r.cliente.Apellido + "|" + r.carro.placa + " " + r.carro.tipoVehiculo + "|" + r.valor+ "|" + r.fechaInicio +" "+ r.horaInicio + "|" + "Empleado: "+ r.empleado.nombre +"| Codigo Empleado: "+ r.empleado.codEmpleado );
     }
 
     }
